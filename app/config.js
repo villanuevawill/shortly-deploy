@@ -4,10 +4,10 @@ var path = require('path');
 var db = Bookshelf.initialize({
   client: 'sqlite3',
   connection: {
-    host: '127.0.0.1',
-    user: 'your_database_user',
-    password: 'password',
-    database: 'shortlydb',
+    host: process.env.host,//check Azure for certainty
+    user: process.env.user,//check Azure for certainty
+    password: process.env.password,//check Azure for certainty
+    database: process.env.database, //check Azure for certainty
     charset: 'utf8',
     filename: path.join(__dirname, '../db/shortly.sqlite')
   }

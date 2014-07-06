@@ -4,7 +4,7 @@ var path = require('path');
 var db = Bookshelf.initialize({
   client: 'sqlite3',
   connection: {
-    host: 'localhost',
+    host: 'http://shortlywill.azurewebsites.net/',
     user: 'your_database_user',
     password: 'password',
     database: 'shortlydb',

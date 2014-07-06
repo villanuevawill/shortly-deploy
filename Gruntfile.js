@@ -28,7 +28,14 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      // Project configuration.
+      my_target: {
+        files: {
+          'public/dist/output.min.js': ['public/dist/shortlywill.js']
+        }
+      }
     },
+
 
     jshint: {
       files: [

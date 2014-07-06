@@ -28,3 +28,7 @@ results
 
 npm-debug.log
 node_modules
+
+###Azure###
+azure.err
+iisnode.yml

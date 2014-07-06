@@ -42,7 +42,6 @@ module.exports = function(grunt) {
         // Add filespec list here
       ],
       options: {
-        force: 'true',
         jshintrc: '.jshintrc',
         ignores: [
           'public/lib/**/*.js',
@@ -107,8 +106,8 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-  grunt.registerTask('build', [
-  ]);
+  grunt.registerTaks('verify')
+  grunt.registerTask('build', ['jshint', 'uglify', 'concat']);
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {

@@ -15,7 +15,8 @@ module.exports = function(grunt) {
     mochaTest: {
       test: {
         options: {
-          reporter: 'spec'
+          reporter: 'spec',
+          bail: 'true'
         },
         src: ['test/**/*.js']
       }
@@ -106,8 +107,8 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-  grunt.registerTaks('verify')
-  grunt.registerTask('build', ['jshint', 'uglify', 'concat']);
+  grunt.registerTask('verify')
+  grunt.registerTask('build', ['jshint','concat', 'uglify']);
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
@@ -117,7 +118,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('deploy', [
+  grunt.registerTask('deploy', ['test','build','upload'
     // add your deploy tasks here
   ]);
 
